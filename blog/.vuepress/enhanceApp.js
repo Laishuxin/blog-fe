@@ -1,4 +1,4 @@
-import OhVueIcon from "oh-vue-icons";
+import OhVueIcon from 'oh-vue-icons'
 
 import {
   FaFortAwesome,
@@ -10,7 +10,15 @@ import {
   HiTranslate,
   OiRepo,
   OiGitCompare,
-} from "oh-vue-icons/icons";
+  FaJs,
+  FaCss3,
+  FaHtml5,
+  FaVuejs,
+  FaReact,
+  FaBriefcase,
+  IoLogoWebComponent,
+  IoBriefcaseOutline
+} from 'oh-vue-icons/icons'
 
 OhVueIcon.add(
   FaFortAwesome,
@@ -21,5 +29,12 @@ OhVueIcon.add(
   RiSearch2Line,
   HiTranslate,
   OiRepo,
-  OiGitCompare
-);
+  OiGitCompare,
+  FaJs,
+  FaHtml5,
+  FaCss3,
+  FaVuejs,
+  FaReact,
+  FaBriefcase,
+  IoLogoWebComponent
+)

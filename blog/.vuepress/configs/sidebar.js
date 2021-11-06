@@ -1,47 +1,32 @@
+const { getChildren } = require('../utils')
 module.exports = {
-  "/javascript/": ["promise", "proxy"],
-  "/framework/": [
+  '/frontend/': [
     {
-      title: "Vue",
+      title: 'HTML',
       collapsable: false,
-      children: ["", "vue/directives", "vue/mini-vue"],
+      children: getChildren('/frontend/html/'),
     },
     {
-      title: "React",
+      title: 'CSS',
+      collapsable: false,
+      children: getChildren('/frontend/css/'),
+    },
+    {
+      title: 'javascript',
+      collapsable: false,
+      children: getChildren('/frontend/javascript/'),
+    },
+  ],
+  '/framework/': [
+    {
+      title: 'Vue',
+      collapsable: false,
+      children: getChildren('/framework/vue/'),
+    },
+    {
+      title: 'React',
       collapsable: true,
-      children: ["", "react/hooks", "react/optimize"],
+      children: getChildren('/framework/react/'),
     },
   ],
-  "/zh/docs/": [
-    {
-      title: "基础",
-      collapsable: false,
-      children: ["", "basic/installation", "basic/config", "basic/content"],
-    },
-    {
-      title: "进阶",
-      collapsable: false,
-      children: [
-        "advanced/features",
-        "advanced/icons",
-        "advanced/highlighting-themes",
-      ],
-    },
-    {
-      title: "插件",
-      collapsable: false,
-      children: [
-        "plugins/",
-        "plugins/chart",
-        "plugins/mermaid",
-        "plugins/roughviz",
-        "plugins/markmap",
-        "plugins/katex",
-        "plugins/md-plus",
-        "plugins/reading-time",
-        "plugins/baidu-tongji",
-        "plugins/rss",
-      ],
-    },
-  ],
-};
+}

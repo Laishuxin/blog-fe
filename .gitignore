@@ -6,3 +6,4 @@ dist
 .npmrc
 .yarnrc
 **/node_modules
+scripts/_*

@@ -9,8 +9,9 @@
   ],
   "scripts": {
     "build": "vuepress build blog --dest dist",
-    "dev": "vuepress dev blog --host 0.0.0.0 --port 4000",
+    "dev": "cross-env NODE_ENV=development vuepress dev blog --host 0.0.0.0 --port 4000",
     "lint": "eslint --ext .js,.vue ./",
+    "format": "prettier --write .",
     "preview": "cd dist && http-server"
   },
   "devDependencies": {
@@ -26,7 +27,8 @@
     "prettier": "^2.3.2",
     "sort-package-json": "^1.50.0",
     "vuepress": "^1.8.2",
-    "vuepress-theme-gungnir": "^0.2.1"
+    "vuepress-theme-gungnir": "^0.2.1",
+    "cross-env": "^7.0.3"
   },
   "useWorkspaces": true
 }
