@@ -1,32 +1,32 @@
-const { getChildren } = require("../utils");
+const { getChildren } = require('../utils')
 module.exports = {
-  "/frontend/": [
+  '/frontend/': [
     {
-      title: "HTML",
+      title: 'HTML',
       collapsable: false,
-      children: getChildren("/frontend/html/"),
+      children: getChildren('/frontend/html/'),
     },
     {
-      title: "CSS",
+      title: 'CSS',
       collapsable: false,
-      children: getChildren("/frontend/css/"),
+      children: getChildren('/frontend/css/'),
     },
     {
-      title: "JavaScript",
+      title: 'javascript',
       collapsable: false,
-      children: getChildren("/frontend/javascript/"),
+      children: getChildren('/frontend/javascript/'),
     },
   ],
-  "/framework/": [
+  '/framework/': [
     {
-      title: "Vue",
+      title: 'Vue',
       collapsable: false,
-      children: getChildren("/framework/vue/"),
+      children: getChildren('/framework/vue/'),
     },
     {
-      title: "React",
+      title: 'React',
       collapsable: true,
-      children: getChildren("/framework/react/"),
+      children: getChildren('/framework/react/'),
     },
   ],
-};
+}

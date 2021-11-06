@@ -53,13 +53,112 @@
 
 ## 使用
 
+### Quick Start
+
+```sh
+# 安装依赖
+npm install
+# or
+yarn
+
+# 编译
+npm run dev
+# or
+yarn dev
+
+# 部署
+# 注意:
+# - 需要在 shell 环境，可以使用 git bash。
+# - 在 vscode 终端 和 windows cmd 执行不了。
+# - 部署之前需要修改 scripts/deploy.sh 文件中的 git push 仓库指向。
+npm run deploy
+# or
+yarn deploy
+
+# 格式化
+npm run format
+# or
+yarn format
+```
+
+### 文件结构说明
+
+核心文件存放在 `blog` 文件夹中。
+
+- `blog/.vuepress`：这是里面的配置文件。
+- `blog/framework`：分类页面，等下配置 `nav` 会讲。
+- `blog/frontend`：分类页面，等下配置 `nav` 会讲。
+- `blog/links`：分类页面，等下配置 `nav` 会讲。
+- `blog/post`：首页下面的文章。
+   <div style="text-align: center;" class="awesome-img"><img src="./images/2021-11-06-14-23-46.png" alt="img" style="width:80%;"/></div>
+- `blog/.vuepress/public/img/*`: 所以以 `/img/*` 的图片最后会指向该文件中的图片。
+- `blog/.vuepress/configs/*`: 存放页面相关的配置文件。
+
 ### 配置
 
-#### 侧边栏
+#### 基本的配置
+
+基本的配置存放在 `./vuepress/config.js`。
+
+l. title: 会在首页页面标签出显示。
+
+   <div style="text-align: center;" class="awesome-img"><img src="./images/2021-11-06-12-46-35.png" alt="img" style="width:80%;"/></div>
+2. author: 最终会插入到 footer等地方。
+3. personalInfo。
+   <div style="text-align: center;" class="awesome-img"><img src="./images/2021-11-06-12-53-26.png" alt="img" style="width:80%;"/></div>
+4. comment。
+   <div style="text-align: center;" class="awesome-img"><img src="./images/2021-11-06-12-54-21.png" alt="img" style="width:80%;"/></div>
+
+- owner: 你 GitHub 的用户名。
+- repo: 你 GitHub 的仓库名（建议 fork 该仓库，然后去修改，默认为 `'blog-fe'`）。
+- clientId / clientSecret: 需要你在 GitHub 生成（可参考[附录](#create)）后进行配置。
+
+5. plugins: 用于控制插件的打开与关闭。默认全部打开，但是开的越多，编译速度越慢。插件的功能可以参考 [Plugins](https://vuepress-theme-gungnir.vercel.app/docs/plugins/)。插件的使用可以参考 `blog/posts/hello-world-1.md` 和 `blog/posts/hello-world-2.md` 两个模板文章。
 
 #### 导航栏
 
-### snippet
+导航栏的配置放在 `blog/.vuepress/configs/nav.js` 中，注意配置时候的路径。配置完成可以生成如下的导航栏：
+
+<div style="text-align: center;" class="awesome-img"><img src="./images/2021-11-06-13-49-14.png" alt="img" style="width:80%;"/></div>
+
+更多导航栏的配置可以参考：
+
+- [Default Theme Config](https://vuepress.vuejs.org/theme/default-theme-config.html#homepage)
+
+#### 侧边栏
+
+侧边栏的配置放在 `blog/.vuepress/configs/sidebar.js`，配置的时候需要注意路径问题。为了方便使用，里面内置了一个 `getChildren` 函数，用于提取 `.md` 文件，并生成对应的配置。
+
+使用方式如下。例如我们要生成一个 `frontend` 的大类，然后里面又有 HTML, CSS, JavaScript 的小类。
+
+1. 创建文件夹。在 `blog` 文件夹下创建一个 `frontend` 的文件夹。
+2. 创建子类文件夹。在 `blog/frontend/` 下分别创建 html, css, javascript 三个文件夹。
+3. 创建索引文件。分别在 `blog/frontend/`, `blog/frontend/html`, `blog/frontend/css`, `blog/frontend/javascript` 下创建 `README.md` 文件。因为 vuepress 在路由跳转的时候，默认会去找当前路由下的 `README.md` 文件，作为 `index.html`。
+4. 在 `blog/.vuepress/configs/sidebar` 中进行配置。
+
+关于 `getChildren` 的使用：
+
+1. `getChildren` 会提取指定目录（默认以 `blog/` 作为 base 目录）下的 `.md` 文件，并生成 sidebar 中 children 的配置。
+
+2. 如果需要指定文章的优先级，可以通过在文件末尾设置优先级。
+   例如：`a.md`, `c-1.md`, `b-2.md`。会以 `-` 后面的数字作为排序规则，如果没有提供优先级，默认以字母表的形式排序。执行 `getChildren` 会生成 `['a', 'c-1', 'b-2']`
+
+`getChildren` 源码在 `blog/.vuepress/utils.js` 中，实现也非常简单，有兴趣的同学可以去看一下。
+
+更多 sidebar 的配置可以参考：
+
+- [Sidebar](https://vuepress.vuejs.org/theme/default-theme-config.html#sidebar)
+
+### 文章的编写
+
+1. 配置。使用 Snippets(下面有相应的 snippets) 快速生成配置 `header`。其中 `title` 是必须了，有了 title 字段就不能在 markdown 文件中使用一级标题(`# h1`)。
+2. 内容编写。支持任何 Markdown 语法，同时 [VuePress](https://vuepress.vuejs.org/) 官方也提供了一些强化语法。
+
+==注意==: 如果修改了配置文件，或者是 `.md` 文件的配置，都需要重新编译才能生效。
+
+### Snippets
+
+为了方便编写文章，下面提供了一些实用的 snippets。
 
 使用步骤：
 
@@ -70,11 +169,11 @@
 {
   "bold": {
     "prefix": "bold",
-    "body": "**$0**"
+    "body": "**$1**$0"
   },
   "highline": {
     "prefix": "highline",
-    "body": "==$0=="
+    "body": "==$1==$0"
   },
   "reference": {
     "prefix": "reference",
@@ -263,6 +362,16 @@
 2. 针对编译太慢的问题。这是由于 VuePress 采用 Webpack 进行编译，可能编译过程会比较慢。
 3. 关于页面加载慢。页面初始化的时候会加载很多资源，可能会慢一点。
 4. 关于预览问题。VuePress 支持热更新，但如果是新创建的文件或者修改了 `.md` 文件的 `config`，则需要重新编译。可以使用 Vscode 的一些插件进行预览，但其功能没有 VuePress 内置的 Markdown 解析器提供的完善。
+
+## Appendix
+
+### <span id="create">生成 clientId 和 clientSecret</span>
+
+GitHub settings -> Developer settings -> OAuthe Apps -> new OAuth App。
+
+<div style="text-align: center;" class="awesome-img"><img src="./images/2021-11-06-13-46-02.png" alt="img" style="width:80%;"/></div>
+
+<div style="text-align: center;" class="awesome-img"><img src="./images/2021-11-06-13-53-28.png" alt="img" style="width:80%;"/></div>
 
 ## 开源协议
 
