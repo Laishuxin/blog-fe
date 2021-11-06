@@ -90,7 +90,7 @@ yarn format
 - `blog/frontend`：分类页面，等下配置 `nav` 会讲。
 - `blog/links`：分类页面，等下配置 `nav` 会讲。
 - `blog/post`：首页下面的文章。
-   <div style="text-align: center;" class="awesome-img"><img src="./images/2021-11-06-14-23-46.png" alt="img" style="width:80%;"/></div>
+  ![image](./images/2021-11-06-14-23-46.png)
 - `blog/.vuepress/public/img/*`: 所以以 `/img/*` 的图片最后会指向该文件中的图片。
 - `blog/.vuepress/configs/*`: 存放页面相关的配置文件。
 
@@ -102,12 +102,13 @@ yarn format
 
 l. title: 会在首页页面标签出显示。
 
-   <div style="text-align: center;" class="awesome-img"><img src="./images/2021-11-06-12-46-35.png" alt="img" style="width:80%;"/></div>
-2. author: 最终会插入到 footer等地方。
+![image](./images/2021-11-06-12-46-35.png)
+
+2. author: 最终会插入到 footer 等地方。
 3. personalInfo。
-   <div style="text-align: center;" class="awesome-img"><img src="./images/2021-11-06-12-53-26.png" alt="img" style="width:80%;"/></div>
+   ![image](./images/2021-11-06-12-53-26.png)
 4. comment。
-   <div style="text-align: center;" class="awesome-img"><img src="./images/2021-11-06-12-54-21.png" alt="img" style="width:80%;"/></div>
+   ![image](./images/2021-11-06-12-54-21.png)
 
 - owner: 你 GitHub 的用户名。
 - repo: 你 GitHub 的仓库名（建议 fork 该仓库，然后去修改，默认为 `'blog-fe'`）。
@@ -119,8 +120,7 @@ l. title: 会在首页页面标签出显示。
 
 导航栏的配置放在 `blog/.vuepress/configs/nav.js` 中，注意配置时候的路径。配置完成可以生成如下的导航栏：
 
-<div style="text-align: center;" class="awesome-img"><img src="./images/2021-11-06-13-49-14.png" alt="img" style="width:80%;"/></div>
-
+![image](./images/2021-11-06-13-49-14.png)
 更多导航栏的配置可以参考：
 
 - [Default Theme Config](https://vuepress.vuejs.org/theme/default-theme-config.html#homepage)
@@ -154,7 +154,9 @@ l. title: 会在首页页面标签出显示。
 1. 配置。使用 Snippets(下面有相应的 snippets) 快速生成配置 `header`。其中 `title` 是必须了，有了 title 字段就不能在 markdown 文件中使用一级标题(`# h1`)。
 2. 内容编写。支持任何 Markdown 语法，同时 [VuePress](https://vuepress.vuejs.org/) 官方也提供了一些强化语法。
 
-==注意==: 如果修改了配置文件，或者是 `.md` 文件的配置，都需要重新编译才能生效。
+==注意==:
+1. 如果修改了配置文件，或者是 `.md` 文件的配置，都需要重新编译才能生效。
+2. markdown 中的图片不需要放在 `blog/.vuepress/public` 文件下。
 
 ### Snippets
 
@@ -374,9 +376,8 @@ l. title: 会在首页页面标签出显示。
 
 GitHub settings -> Developer settings -> OAuthe Apps -> new OAuth App。
 
-<div style="text-align: center;" class="awesome-img"><img src="./images/2021-11-06-13-46-02.png" alt="img" style="width:80%;"/></div>
-
-<div style="text-align: center;" class="awesome-img"><img src="./images/2021-11-06-13-53-28.png" alt="img" style="width:80%;"/></div>
+![image](./images/2021-11-06-12-54-21.png)
+![image](./images/2021-11-06-12-54-21.png)
 
 ## 开源协议
 
