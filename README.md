@@ -356,6 +356,11 @@ l. title: 会在首页页面标签出显示。
 }
 ````
 
+## 更多配置
+
+- [VuePress](https://vuepress.vuejs.org/)
+- [Gungnir - Documentation](https://vuepress-theme-gungnir.vercel.app/docs/)
+
 ## FAQ
 
 1. 针对 `prefix` 过长的问题。事实上 Vscode 运行输入部分 `prefix` 就可以帮我们推导出来。例如：`prefix = container:info`，只需要输入 `info` 就会有相应的代码提示。
