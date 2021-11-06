@@ -376,8 +376,7 @@ l. title: 会在首页页面标签出显示。
 
 GitHub settings -> Developer settings -> OAuthe Apps -> new OAuth App。
 
-![image](./images/2021-11-06-12-54-21.png)
-![image](./images/2021-11-06-12-54-21.png)
+![image](./images/2021-11-06-13-53-28.png)
 
 ## 开源协议
 
