@@ -1,4 +1,4 @@
-import OhVueIcon from 'oh-vue-icons'
+import OhVueIcon from "oh-vue-icons";
 
 import {
   FaFortAwesome,
@@ -17,8 +17,8 @@ import {
   FaReact,
   FaBriefcase,
   IoLogoWebComponent,
-  IoBriefcaseOutline
-} from 'oh-vue-icons/icons'
+  IoBriefcaseOutline,
+} from "oh-vue-icons/icons";
 
 OhVueIcon.add(
   FaFortAwesome,
@@ -37,4 +37,4 @@ OhVueIcon.add(
   FaReact,
   FaBriefcase,
   IoLogoWebComponent
-)
+);
